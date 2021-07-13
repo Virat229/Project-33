@@ -9,7 +9,7 @@ var backgroundImg;
 snow = [];
 var snowSound;
 function preload(){
-backgroundImg = loadImage("snowDay.jpg")
+backgroundImg = loadImage("Snowday.jpg")
 snowSound = loadSound("SnowSound.mp3")
 
 }

@@ -9,7 +9,7 @@ var backgroundImg;
 snow = [];
 var snowSound;
 function preload(){
-getBackgroundImg();
+backgroundImg = loadImage("snowDay.jpg")
 snowSound = loadSound("SnowSound.mp3")
 
 }
@@ -26,7 +26,6 @@ function setup() {
 }
 
 function draw() {
-  if(backgroundImg)
   background(backgroundImg); 
   Engine.update(engine);
   if(frameCount % 10 === 0){
@@ -41,19 +40,4 @@ function draw() {
 
  // snow1.display();
   drawSprites();
-}
-async function getBackgroundImg(){
-var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
-var responseJson = await response.json();
-var datetime = responseJson.datetime;
-var hour = datetime.slice(11,13);
-if(hour >= 06 && hour <=17){
-  bg ="Snowday.jpg";
-}
-else 
-{
-  bg="Snownight.jpg";
-}
-backgroundImg=loadImage(bg);
-
 }
